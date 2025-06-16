@@ -1,0 +1,2379 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.landing-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 80px;
+  background-image: url(assets/images/BG.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+}
+
+.landing-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+  padding: 6.8rem 2.8rem;
+  border-radius: 1.4rem;
+  position: relative;
+  height: auto;
+  min-height: 300px;
+  background-image: url(assets/images/LPB.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  animation: fadeSlideUp 0.8s ease-out forwards;
+}
+
+.landing-logo {
+  width: 120px;
+  height: auto;
+  margin-bottom: 1rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.landing-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.55);
+  z-index: 1;
+}
+
+.landing-container>* {
+  z-index: 2;
+  position: relative;
+  color: white;
+}
+
+.landing-page h1,
+.landing-page p {
+  font-family: 'Raleway';
+
+
+}
+
+.landing-page p {
+  font-size: 1.2rem;
+}
+
+.brand {
+  font-family: 'Orbitron';
+  font-size: 4rem;
+  color: #f0b028;
+}
+
+.landing-page-btn {
+  background-color: #f7f3f1;
+  padding: 1rem 2rem;
+  border-radius: 1.8rem;
+  color: rgb(46, 45, 45);
+  text-decoration: none;
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 1.2rem;
+  position: absolute;
+  bottom: 1.4rem;
+  left: 50%;
+  transform: translateX(-50%);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.landing-page-btn:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  justify-content: center;
+  align-items: center;
+  animation: zoomIn 0.5s ease-out;
+}
+
+@keyframes zoomIn {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.modal-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  width: 100%;
+  max-width: 400px;
+  position: relative;
+  text-align: center;
+  max-height: 90vh;
+  overflow-y: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  background-image: url(assets/images/IFL.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+}
+
+.close-btn {
+  position: absolute;
+  right: 1rem;
+  top: .3rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  position: relative;
+  height: 430px;
+  animation: fadeSlideDown 0.8s ease-out forwards;
+}
+
+.form input {
+  padding: 0.7rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  font-family: 'Roboto';
+  font-size: 1rem;
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 8px;
+  width: 100%;
+}
+
+#myCheckbox {
+  cursor: pointer;
+}
+
+#myCheckbox+label {
+  font-size: 0.85em;
+  color: #dbd3d3;
+  font-family: 'Roboto';
+}
+
+.google-login {
+  text-align: center;
+  margin-bottom: 2.2rem;
+}
+
+.google-login p {
+  font-family: 'Roboto', sans-serif;
+  color: #d4d4d4;
+  font-size: 0.9rem;
+  margin-bottom: 0.8rem;
+}
+
+.google-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 6px 8px;
+  background-color: white;
+  color: #444;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 10px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  width: 100%;
+  max-width: 250px;
+  margin: 12px auto;
+  box-sizing: border-box;
+  transition: all 0.2s ease-in-out;
+}
+
+.google-btn img {
+  width: 16px;
+  height: 16px;
+}
+
+.google-btn:hover {
+  background-color: #f5f5f5;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.google-btn:active {
+  transform: scale(0.97);
+}
+
+.form button {
+  padding: 0.7rem;
+  border: none;
+  background-color: #f8eee5;
+  color: rgb(51, 51, 51);
+  border-radius: 0.5rem;
+  font-family: 'Roboto';
+  font-size: 1rem;
+  width: 100%;
+  max-width: 6rem;
+  position: absolute;
+  bottom: .4rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.form button:hover {
+  background-color: rgb(52, 146, 253);
+}
+
+.loading-spinner {
+  margin-top: 20px;
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-top: 4px solid #f0b028;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  margin: auto;
+  animation: spin 1.5s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+#loginForm h2 {
+  font-family: 'Orbitron';
+}
+
+#signupForm {
+  font-family: 'Orbitron';
+  position: relative;
+  height: 630px;
+  margin-top: 3rem;
+  animation: fadeSlideDown 0.8s ease-out forwards;
+}
+
+#signupForm label {
+  font-family: 'Roboto';
+  color: #f8eee5;
+}
+
+.gender-options {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  font-family: 'Roboto';
+  color: #f8eee5;
+
+}
+
+.gender-options input {
+  cursor: pointer;
+}
+
+.gender-options label {
+  font-family: 'Roboto';
+}
+
+.gender-options label:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.Age option {
+  font-family: 'Roboto';
+}
+
+.form-container {
+  width: 90%;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+select.Age {
+  width: 100%;
+  max-width: 300px;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-family: 'Roboto', sans-serif;
+  background-color: #fff;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  margin: 0 auto;
+  display: block;
+  box-sizing: border-box;
+  margin-top: 1rem;
+  cursor: pointer;
+}
+
+select.Age:focus {
+  border-color: #666666;
+  box-shadow: 0 0 5px rgba(70, 69, 69, 0.5);
+  outline: none;
+}
+
+.hidden {
+  display: none;
+
+}
+
+.form-toggle {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.form-toggle button {
+  background: none;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  color: #252525;
+  font-family: 'Roboto';
+  font-size: 1rem;
+}
+
+.form-toggle button.active {
+  border-bottom: 2px solid #f8fbfc;
+
+}
+
+
+
+.footer-landing {
+  padding: 3rem 1rem 2rem;
+  text-align: center;
+  margin-top: 10rem;
+  animation: fadeSlideUp 0.8s ease-out forwards;
+}
+
+.footer-landing h2 {
+  font-size: 1.75rem;
+  margin-bottom: 0.5rem;
+  color: #000000;
+  font-family: 'Orbitron';
+}
+
+.footer-landing p {
+  font-size: 0.95rem;
+  margin: 0.5rem 0;
+  font-family: 'Roboto';
+  color: #000000;
+}
+
+.footer-icons {
+  margin-top: 1.5rem;
+}
+
+.footer-icons a {
+  color: #000000;
+  margin: 0 0.75rem;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+  cursor: pointer;
+
+}
+
+.footer-icons a:hover {
+  color: #ffffff;
+}
+
+.footer-bottom {
+  margin-top: 3rem;
+  border-top: 1px solid #292828;
+  padding-top: 1rem;
+  font-size: 0.85rem;
+  color: #000000;
+}
+
+@keyframes fadeSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeSlideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media screen and (min-width: 480px) {
+  .landing-container {
+    padding: 5rem 2rem;
+    border-radius: 2.3rem;
+    position: relative;
+  }
+
+  .form button:hover {
+    background-color: rgb(52, 146, 253);
+  }
+
+  .landing-logo {
+    width: 48px;
+    height: auto;
+    top: .5rem;
+    right: .5rem;
+    position: absolute;
+  }
+
+  .landing-page h1 {
+    font-size: 2rem;
+  }
+
+  .landing-page p {
+    font-size: 1rem;
+  }
+
+  .landing-page-btn {
+    padding: 1rem 2.3rem;
+    font-size: 1rem;
+  }
+
+  .modal-content {
+    max-width: 70vw;
+    max-height: 70vh;
+  }
+
+  #myCheckbox {
+    cursor: pointer;
+  }
+
+  #myCheckbox+label {
+    font-size: .80rem;
+    color: #dbd3d3;
+    font-family: 'Roboto';
+  }
+
+  #loginForm {
+    display: column;
+    flex-direction: column;
+    gap: 1rem;
+    position: relative;
+    height: 450px;
+    animation: fadeSlideDown 0.8s ease-out forwards;
+  }
+
+  #signupForm {
+    font-family: 'Orbitron';
+    position: relative;
+    height: 650px;
+    animation: fadeSlideDown 0.8s ease-out forwards;
+  }
+
+  .gender-options {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    font-family: 'Roboto';
+    color: #f8eee5;
+    font-size: .90rem;
+  }
+
+  .gender-options input {
+    cursor: pointer;
+  }
+
+  .gender-options label {
+    font-family: 'Roboto';
+  }
+
+  .gender-options label:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+
+  .Age option {
+    font-family: 'Roboto';
+  }
+
+  .modal-content {
+    width: 90%;
+    margin: 15% auto;
+    padding: 20px;
+  }
+
+  .modal-content h2 {
+    font-size: 1.8rem;
+  }
+
+  .brand {
+    font-size: 2.5rem;
+  }
+
+  .modal-content p {
+    font-size: 0.9rem;
+  }
+
+  .close-btn {
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+  }
+
+  .form-container {
+    width: 90%;
+    max-width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+  }
+
+  select.Age option {
+    font-size: .90rem;
+  }
+
+  select.Age {
+    width: 100%;
+    max-width: 100%;
+    padding: 0.8rem;
+    font-size: .90rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-family: 'Roboto', sans-serif;
+    background-color: #fff;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    margin: 0 auto;
+    display: block;
+    box-sizing: border-box;
+    margin-top: 1rem;
+    cursor: pointer;
+  }
+
+  select.Age:focus {
+    border-color: #666666;
+    box-shadow: 0 0 5px rgba(70, 69, 69, 0.5);
+    outline: none;
+  }
+
+  .form button {
+    padding: 0.6rem;
+    border: none;
+    background-color: #f8eee5;
+    color: rgb(51, 51, 51);
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-family: 'Roboto';
+    font-size: .90rem;
+    width: 100%;
+    max-width: 8rem;
+    position: absolute;
+    bottom: .4rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  }
+
+
+  #loginForm h2 {
+    font-size: 15px;
+  }
+
+  #signupForm h2 {
+    font-size: 15px;
+  }
+
+  #signupForm label {
+    font-size: .90rem;
+  }
+
+  #loginForm input {
+    width: 100%;
+    max-width: 150px;
+    margin-left: 35%;
+  }
+
+  #signupForm input[type="text"],
+  #signupForm input[type="email"],
+  #signupForm input[type="password"] {
+    width: 100%;
+    max-width: 150px;
+    margin-left: 35%;
+  }
+
+  .form input .form button,
+  select.Age {
+    font-size: .90rem;
+  }
+
+  .form-toggle button {
+    background: none;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    color: #252525;
+    font-family: 'Roboto';
+    font-size: 1.1rem;
+  }
+
+  .google-login {
+    text-align: center;
+    margin-bottom: 2.2rem;
+  }
+
+  .google-login p {
+    font-family: 'Roboto';
+    color: rgb(212, 207, 207);
+    font-size: .70rem;
+  }
+
+  .google-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 16px;
+    background-color: white;
+    color: #444;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    transition: box-shadow 0.3s ease;
+    font-family: 'Roboto', sans-serif;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  }
+
+  .google-btn img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .google-btn:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.8);
+  }
+
+  .footer-landing h2 {
+    font-size: 1.40rem;
+  }
+
+  .footer-landing p {
+    font-size: .60rem;
+  }
+
+  .footer-icons a {
+    font-size: .90rem;
+  }
+
+  .footer-bottom {
+    font-size: .80rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+
+  .landing-container {
+    padding: 6rem 3rem;
+    border-radius: 2.3rem;
+    position: relative;
+  }
+
+  .form button:hover {
+    background-color: rgb(52, 146, 253);
+  }
+
+  .modal-content {
+    width: 85%;
+    margin: 12% auto;
+    padding: 25px;
+  }
+
+  .modal-content h2 {
+    font-size: 2rem;
+  }
+
+  .brand {
+    font-size: 2.8rem;
+  }
+
+  .modal-content p {
+    font-size: 1rem;
+  }
+
+  .close-btn {
+    top: 15px;
+    right: 15px;
+    font-size: 22px;
+  }
+
+  .landing-logo {
+    width: 55px;
+    height: auto;
+    top: .5rem;
+    right: .5rem;
+    position: absolute;
+  }
+
+  .landing-page h1 {
+    font-size: 2.5rem;
+  }
+
+  .landing-page p {
+    font-size: 1.2rem;
+  }
+
+  .landing-page span {
+    font-size: 1.3rem;
+  }
+
+  .landing-page-btn {
+    padding: 1.1rem 2.6rem;
+    font-size: 1.2rem;
+  }
+
+  .modal-content {
+    max-width: 70vw;
+    max-height: 70vh;
+  }
+
+  #myCheckbox {
+    cursor: pointer;
+  }
+
+  #myCheckbox+label {
+    font-size: .80rem;
+    color: #dbd3d3;
+    font-family: 'Roboto';
+  }
+
+  #loginForm {
+    display: column;
+    flex-direction: column;
+    gap: 1rem;
+    position: relative;
+    height: 490px;
+    animation: fadeSlideDown 0.8s ease-out forwards;
+  }
+
+  #signupForm {
+    font-family: 'Orbitron';
+    position: relative;
+    height: 690px;
+    animation: fadeSlideDown 0.8s ease-out forwards;
+  }
+
+  .gender-options {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    font-family: 'Roboto';
+    color: #f8eee5;
+    font-size: 1.1rem;
+  }
+
+  .gender-options input {
+    cursor: pointer;
+  }
+
+  .gender-options label {
+    font-family: 'Roboto';
+  }
+
+  .gender-options label:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+
+  .Age option {
+    font-family: 'Roboto';
+  }
+
+  .form-container {
+    width: 90%;
+    max-width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+  }
+
+  select.Age option {
+    font-size: 1.1rem;
+  }
+
+  select.Age {
+    width: 100%;
+    max-width: 100%;
+    padding: 0.8rem;
+    font-size: 1.1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-family: 'Roboto', sans-serif;
+    background-color: #fff;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    margin: 0 auto;
+    display: block;
+    box-sizing: border-box;
+    margin-top: 1rem;
+    cursor: pointer;
+  }
+
+  select.Age:focus {
+    border-color: #666666;
+    box-shadow: 0 0 5px rgba(70, 69, 69, 0.5);
+    outline: none;
+  }
+
+  .form button {
+    padding: 0.7rem;
+    border: none;
+    background-color: #f8eee5;
+    color: rgb(51, 51, 51);
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-family: 'Roboto';
+    font-size: 1.1rem;
+    width: 100%;
+    max-width: 8rem;
+    position: absolute;
+    bottom: .4rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  }
+
+  #loginForm h2 {
+    font-size: 20px;
+  }
+
+  #signupForm h2 {
+    font-size: 20px;
+  }
+
+  #signupForm label {
+    font-size: 1.1rem;
+  }
+
+  #loginForm input {
+    width: 100%;
+    max-width: 200px;
+    margin-left: 32%;
+  }
+
+  #signupForm input[type="text"],
+  #signupForm input[type="email"],
+  #signupForm input[type="password"] {
+    width: 100%;
+    max-width: 200px;
+    margin-left: 32%;
+  }
+
+  .form input .form button,
+  select.Age {
+    font-size: 1.1rem;
+  }
+
+  .form-toggle button {
+    background: none;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    color: #252525;
+    font-family: 'Roboto';
+    font-size: 1.3rem;
+  }
+
+  .google-login {
+    text-align: center;
+    margin-bottom: 2.2rem;
+  }
+
+  .google-login p {
+    font-family: 'Roboto';
+    color: rgb(212, 207, 207);
+    font-size: .80rem;
+  }
+
+  .google-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 6px 12px;
+    background-color: white;
+    color: #444;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    transition: box-shadow 0.3s ease;
+    font-family: 'Roboto', sans-serif;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  }
+
+  .google-btn img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .google-btn:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.8);
+  }
+
+  .footer-landing h2 {
+    font-size: 1.60rem;
+  }
+
+  .footer-landing p {
+    font-size: .80rem;
+  }
+
+  .footer-icons a {
+    font-size: 1rem;
+  }
+
+  .footer-bottom {
+    font-size: .90rem;
+  }
+}
+
+@media (min-width: 1024px) {
+
+  .landing-container {
+    padding: 7rem 4rem;
+    border-radius: 2.3rem;
+    position: relative;
+  }
+
+  .form button:hover {
+    background-color: rgb(52, 146, 253);
+  }
+
+  .landing-logo {
+    width: 70px;
+    height: auto;
+    top: .5rem;
+    right: .5rem;
+    position: absolute;
+  }
+
+  .brand {
+    font-size: 4rem;
+  }
+
+  .landing-page h1 {
+    font-size: 3rem;
+  }
+
+  .landing-page p {
+    font-size: 1.5rem;
+  }
+
+  .landing-page span {
+    font-size: 1.5rem;
+  }
+
+  .landing-page-btn {
+    padding: 1.2rem 2.8rem;
+    font-size: 1.4rem;
+  }
+
+  .modal-content {
+    max-width: 70vw;
+    max-height: 70vh;
+  }
+
+  #myCheckbox {
+    cursor: pointer;
+  }
+
+  #myCheckbox+label {
+    font-size: .90rem;
+    color: #dbd3d3;
+    font-family: 'Roboto';
+  }
+
+  #loginForm {
+    display: column;
+    flex-direction: column;
+    gap: 1rem;
+    position: relative;
+    height: 520px;
+    animation: fadeSlideDown 0.8s ease-out forwards;
+  }
+
+  #signupForm {
+    font-family: 'Orbitron';
+    position: relative;
+    height: 720px;
+    animation: fadeSlideDown 0.8s ease-out forwards;
+  }
+
+  .gender-options {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    font-family: 'Roboto';
+    color: #f8eee5;
+    font-size: 1.3rem;
+  }
+
+  .gender-options input {
+    cursor: pointer;
+  }
+
+  .gender-options label {
+    font-family: 'Roboto';
+  }
+
+  .gender-options label:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+
+  .Age option {
+    font-family: 'Roboto';
+  }
+
+  .form-container {
+    width: 90%;
+    max-width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+  }
+
+  select.Age option {
+    font-size: 1.3rem;
+  }
+
+  select.Age {
+    width: 100%;
+    max-width: 100%;
+    padding: 0.8rem;
+    font-size: 1.1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-family: 'Roboto', sans-serif;
+    background-color: #fff;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    margin: 0 auto;
+    display: block;
+    box-sizing: border-box;
+    margin-top: 1rem;
+    cursor: pointer;
+  }
+
+  select.Age:focus {
+    border-color: #666666;
+    box-shadow: 0 0 5px rgba(70, 69, 69, 0.5);
+    outline: none;
+  }
+
+  .form button {
+    padding: 0.7rem;
+    border: none;
+    background-color: #f8eee5;
+    color: rgb(51, 51, 51);
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-family: 'Roboto';
+    font-size: 1.3rem;
+    width: 100%;
+    max-width: 8rem;
+    position: absolute;
+    bottom: .4rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  }
+
+  #loginForm h2 {
+    font-size: 30px;
+  }
+
+  #signupForm h2 {
+    font-size: 30px;
+  }
+
+  #signupForm label {
+    font-size: 1.3rem;
+  }
+
+  #loginForm input {
+    width: 100%;
+    max-width: 250px;
+    margin-left: 27%;
+  }
+
+  #signupForm input[type="text"],
+  #signupForm input[type="email"],
+  #signupForm input[type="password"] {
+    width: 100%;
+    max-width: 250px;
+    margin-left: 27%;
+  }
+
+  .form input .form button,
+  select.Age {
+    font-size: 1.3rem;
+  }
+
+  .form-toggle button {
+    background: none;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    color: #252525;
+    font-family: 'Roboto';
+    font-size: 1.5rem;
+  }
+
+  .google-login {
+    text-align: center;
+    margin-bottom: 2.2rem;
+  }
+
+  .google-login p {
+    font-family: 'Roboto';
+    color: rgb(212, 207, 207);
+    font-size: .90rem;
+  }
+
+  .google-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 16px;
+    background-color: white;
+    color: #444;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 20px;
+    transition: box-shadow 0.3s ease;
+    font-family: 'Roboto', sans-serif;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  }
+
+  .google-btn img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .google-btn:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.8);
+  }
+
+  .footer-landing h2 {
+    font-size: 1.80rem;
+  }
+
+  .footer-landing p {
+    font-size: .90rem;
+  }
+
+  .footer-icons a {
+    font-size: 1.1rem;
+  }
+
+  .footer-bottom {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 1200px) {
+
+  .landing-container {
+    padding: 8rem 5rem;
+    border-radius: 2.5rem;
+    position: relative;
+  }
+
+  .landing-page h1 {
+    font-size: 4rem;
+  }
+
+  .landing-page p {
+    font-size: 1.7rem;
+  }
+
+  .landing-page span {
+    font-size: 2rem;
+  }
+
+  .landing-page-btn {
+    padding: 1.4rem 3rem;
+    font-size: 1.6rem;
+  }
+
+  .landing-logo {
+    width: 80px;
+    height: auto;
+    top: .5rem;
+    right: .5rem;
+    position: absolute;
+  }
+
+  .landing-page-btn:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    color: rgb(224, 113, 39);
+  }
+
+  .brand {
+    font-size: 5rem;
+  }
+
+  .modal-content {
+    max-width: 70vw;
+    max-height: 70vh;
+  }
+
+  #myCheckbox {
+    cursor: pointer;
+  }
+
+  #myCheckbox+label {
+    font-size: 1rem;
+    color: #dbd3d3;
+    font-family: 'Roboto';
+  }
+
+  #loginForm {
+    display: column;
+    flex-direction: column;
+    gap: 1rem;
+    position: relative;
+    height: 550px;
+    animation: fadeSlideDown 0.8s ease-out forwards;
+  }
+
+  #signupForm {
+    font-family: 'Orbitron';
+    position: relative;
+    height: 750px;
+    animation: fadeSlideDown 0.8s ease-out forwards;
+  }
+
+  .gender-options {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    font-family: 'Roboto';
+    color: #f8eee5;
+    font-size: 1.5rem;
+  }
+
+  .gender-options input {
+    cursor: pointer;
+  }
+
+  .gender-options label {
+    font-family: 'Roboto';
+  }
+
+  .gender-options label:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+
+  .Age option {
+    font-family: 'Roboto';
+  }
+
+  .form-container {
+    width: 90%;
+    max-width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+  }
+
+  select.Age option {
+    font-size: 1.5rem;
+  }
+
+  select.Age {
+    width: 100%;
+    max-width: 100%;
+    padding: 0.8rem;
+    font-size: 1.1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-family: 'Roboto', sans-serif;
+    background-color: #fff;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    margin: 0 auto;
+    display: block;
+    box-sizing: border-box;
+    margin-top: 1rem;
+    cursor: pointer;
+  }
+
+  select.Age:focus {
+    border-color: #666666;
+    box-shadow: 0 0 5px rgba(70, 69, 69, 0.5);
+    outline: none;
+  }
+
+  .form button {
+    padding: 0.7rem;
+    border: none;
+    background-color: #f8eee5;
+    color: rgb(51, 51, 51);
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-family: 'Roboto';
+    font-size: 1.5rem;
+    width: 100%;
+    max-width: 8rem;
+    position: absolute;
+    bottom: .4rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  }
+
+  .form button:hover {
+    background-color: rgb(52, 146, 253);
+  }
+
+  #loginForm h2 {
+    font-size: 40px;
+  }
+
+  #signupForm h2 {
+    font-size: 40px;
+  }
+
+  #signupForm label {
+    font-size: 1.5rem;
+  }
+
+  #loginForm input {
+    width: 100%;
+    max-width: 300px;
+    margin-left: 25%;
+  }
+
+  #signupForm input[type="text"],
+  #signupForm input[type="email"],
+  #signupForm input[type="password"] {
+    width: 100%;
+    max-width: 300px;
+    margin-left: 25%;
+  }
+
+  .form input .form button,
+  select.Age {
+    font-size: 1.5rem;
+  }
+
+  .form-toggle button {
+    background: none;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    color: #252525;
+    font-family: 'Roboto';
+    font-size: 1.7rem;
+  }
+
+  .google-login {
+    text-align: center;
+    margin-bottom: 2.2rem;
+  }
+
+  .google-login p {
+    font-family: 'Roboto';
+    color: rgb(212, 207, 207);
+    font-size: 1rem;
+  }
+
+  .google-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    background-color: white;
+    color: #444;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 24px;
+    transition: box-shadow 0.3s ease;
+    font-family: 'Roboto', sans-serif;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  }
+
+  .google-btn img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .google-btn:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.8);
+  }
+
+  .footer-landing h2 {
+    font-size: 2rem;
+  }
+
+  .footer-landing p {
+    font-size: 1rem;
+  }
+
+  .footer-icons a {
+    font-size: 1.3rem;
+  }
+
+  .footer-bottom {
+    font-size: 1.2rem;
+  }
+}
+
+.body1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  background-image: url(assets/images/BG.jpg);
+  background-size: cover;
+  max-width: 100%;
+  overflow-x: hidden;
+  background-position: center;
+  background-repeat: no-repeat;
+  animation: fadeIn .5s ease-in;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: .5rem 1rem;
+  height: 4rem;
+  width: 100%;
+  background-image: url(assets/images/IFL.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  z-index: 10;
+  gap: 1rem;
+}
+
+
+.navcontainer {
+  flex: 1;
+}
+
+.navlinks {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  align-items: flex-end;
+
+}
+
+.navlinks a {
+  text-decoration: none;
+  font-size: 1.60rem;
+  font-family: 'Raleway';
+  color: #ffffff;
+}
+
+.navlinks a:hover {
+  color: #0d8af0;
+
+}
+
+.navlinks li {
+  padding: .80rem;
+}
+
+.logo img {
+  height: 50px;
+
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+.search-container input {
+  padding: 6px 12px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  font-family: 'Raleway', sans-serif;
+  width: 200px;
+}
+
+.search-container button {
+  background-color: #f0b028;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 20px;
+  cursor: pointer;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.search-container button:hover {
+  background-color: #e09b1d;
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-box {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 400px;
+  width: 90%;
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+}
+
+.modal-actions {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.modal-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-family: 'Orbitron', sans-serif;
+  transition: background 0.2s ease;
+}
+
+.modal-btn.confirm {
+  background-color: #ccc;
+  color: rgb(0, 0, 0);
+}
+
+.modal-btn.confirm:hover {
+  background-color: #0581d3;
+}
+
+.modal-btn.cancel {
+  background-color: #ccc;
+  color: rgb(0, 0, 0);
+}
+
+.modal-btn.cancel:hover {
+  background-color: #0581d3;
+}
+
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 60px 40px;
+  background: linear-gradient(to right, #111, #333);
+  color: white;
+}
+
+.hero h1,
+p {
+  font-family: sans-serif;
+}
+
+.hero-text {
+  max-width: 600px;
+}
+
+.hero-text h1 {
+  font-family: 'Raleway', sans-serif;
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.hero-text span {
+  color: #f0b028;
+  font-family: 'Orbitron';
+}
+
+.hero-text p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.hero-buttons .btn {
+  text-decoration: none;
+  padding: 12px 24px;
+  margin-right: 10px;
+  border-radius: 30px;
+  font-weight: 600;
+  transition: background 0.3s;
+}
+
+.btn {
+  background-color: #ffffff;
+  color: #111;
+  font-family: sans-serif;
+}
+
+.btn:hover {
+  background-color: #008fe2;
+
+}
+
+.btn.secondary {
+  background-color: transparent;
+  border: 2px solid #f0b028;
+  color: #f0b028;
+  font-family: sans-serif;
+}
+
+.btn.secondary:hover {
+  background-color: #f0b028;
+  color: #111;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 10% auto;
+  padding: 30px;
+  border-radius: 12px;
+  width: 80%;
+  max-width: 600px;
+  font-family: 'Raleway', sans-serif;
+  position: relative;
+  animation: fadeIn 0.3s ease;
+}
+
+.modal-content h2 {
+  font-family: 'Raleway', sans-serif;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.brand1 {
+  color: #f0b028;
+  font-size: 3rem;
+  font-family: 'Orbitron';
+}
+
+.modal-content p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #ffffff;
+}
+
+@keyframes zoomOut {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+}
+
+.modal.closing {
+  animation: zoomOut 0.4s ease forwards;
+}
+
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 24px;
+  color: #000000;
+  cursor: pointer;
+}
+
+.close-btn:hover {
+  color: #000;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-image img {
+  width: 400px;
+  border-radius: 20px;
+}
+
+.features {
+  padding: 60px 40px;
+  background: #fff;
+  text-align: center;
+}
+
+.features h2 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2rem;
+  margin-bottom: 40px;
+}
+
+.feature-cards {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+  flex-wrap: wrap;
+
+}
+
+.card {
+  background: #fdfdfd;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  max-width: 300px;
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card img {
+  width: 100%;
+  height: 300px;
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+
+.card h3 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.2rem;
+  margin: 10px 0;
+}
+
+.card p {
+  font-size: 0.95rem;
+  color: #444;
+  font-family: sans-serif;
+}
+
+@media (min-width: 1200px) {
+  .hero-text h1 {
+    font-size: 3.5rem;
+  }
+
+  .hero-image img {
+    width: 450px;
+  }
+
+  .card {
+    max-width: 320px;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1199px) {
+  .hero-text h1 {
+    font-size: 3rem;
+  }
+
+  .hero-image img {
+    width: 400px;
+  }
+
+  .card {
+    max-width: 280px;
+  }
+
+  .navbar {
+    padding: 0.5rem 2rem;
+  }
+
+  .navlinks a {
+    font-size: 1.4rem;
+  }
+
+  .logo img {
+    height: 45px;
+  }
+}
+
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .navbar {
+    flex-direction: row;
+    height: auto;
+    padding: 1rem;
+    text-align: center;
+  }
+
+  .navcontainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .navlinks {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 0.5rem;
+  }
+
+  .navlinks a {
+    font-size: 1.3rem;
+  }
+
+
+  .logo img {
+    height: 40px;
+  }
+
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-text h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-image img {
+    width: 350px;
+    margin-top: 20px;
+  }
+
+  .feature-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    max-width: 100%;
+  }
+}
+
+@media (min-width: 480px) and (max-width: 767px) {
+  .navbar {
+    flex-direction: row;
+    padding: 1rem;
+    height: auto;
+    text-align: center;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .navcontainer {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .navlinks {
+    flex-direction: row;
+    gap: 0.5rem;
+    align-items: center;
+    margin-top: 1rem;
+  }
+
+  .navlinks a {
+    font-size: 1.2rem;
+  }
+
+  .logo img {
+    height: 35px;
+  }
+
+  .hero {
+    flex-direction: column;
+    padding: 30px 20px;
+  }
+
+  .hero-text h1 {
+    font-size: 2rem;
+  }
+
+  .hero-text p {
+    font-size: 1rem;
+  }
+
+  .hero-image img {
+    width: 300px;
+  }
+
+  .feature-cards {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .card {
+    max-width: 90%;
+    padding: 15px;
+  }
+}
+
+main h1 {
+  font-family: 'Orbitron';
+  font-size: 3.5rem;
+  text-align: center;
+}
+
+.product-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  padding: 1rem;
+  justify-content: center;
+
+}
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  position: relative;
+  height: 650px;
+  border-radius: 1rem;
+  padding-bottom: 4rem;
+  padding: 1rem;
+  width: 200px;
+  text-align: center;
+  font-weight: bold;
+  font-family: 'Raleway';
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.8);
+}
+
+.product-card form {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.product-card.hidden {
+  display: none;
+}
+
+.product-card img {
+  width: 100%;
+  height: auto;
+  border-radius: .3rem;
+}
+
+.product-card h3 {
+  margin: 10px 0 5px;
+}
+
+.product-card p {
+  font-weight: bold;
+  color: #000000;
+  font-family: 'Roboto';
+}
+
+.product-card .add-to-cart-btn {
+  border: none;
+  background-color: #008fe2;
+  color: #fff;
+  border-radius: 0.7rem;
+  cursor: pointer;
+  padding: 0.8rem;
+  font-size: 0.9rem;
+  font-family: 'Roboto';
+  position: absolute;
+  bottom: 20px;
+  transform: translateX(-50%);
+  width: 80%;
+  transition: all 0.3s ease;
+}
+
+.product-card .add-to-cart-btn:hover {
+  background-color: rgb(59, 59, 59);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.8);
+}
+
+@media (max-width: 768px) {
+  .product-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .product-card {
+    width: 80%;
+    height: auto;
+    padding: 1.5rem 1rem 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .product-card button {
+    position: static;
+    margin-top: 1rem;
+    width: 100%;
+  }
+
+  main h1 {
+    font-size: 2.5rem;
+    padding: 0 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .product-card {
+    width: 90%;
+    padding: 1.25rem 1rem 2rem;
+  }
+
+  .product-card h3 {
+    font-size: 1.2rem;
+  }
+
+  .product-card p {
+    font-size: 0.9rem;
+  }
+
+  .product-card button {
+    font-size: 0.95rem;
+    padding: 0.7rem;
+  }
+
+  main h1 {
+    font-size: 2rem;
+  }
+}
+
+.modal-overlay-support {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.6);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-box-support {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+
+}
+
+#closeSupportModal {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: transparent;
+  border: none;
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+
+.modal-box-support h2,
+.modal-box-support p {
+  margin: 0;
+  padding: 0;
+  color: #333;
+  font-family: 'Raleway', sans-serif;
+}
+
+.modal-box-support h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.modal-box-support p {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #555;
+}
+
+#supportForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1.5rem;
+
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+#supportForm input,
+#supportForm textarea {
+  width: 100%;
+  max-width: 350px;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-family: 'Roboto', sans-serif;
+  background-color: #f9f9f9;
+  transition: border-color 0.3s;
+}
+
+#supportForm input:focus,
+#supportForm textarea:focus {
+  border-color: #f0b028;
+  outline: none;
+  background-color: #fff;
+}
+
+#supportForm textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.modal-btn-support.confirm {
+  background-color: #008fe2;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.75rem;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s;
+}
+
+.modal-btn-support.confirm:hover {
+  background-color: rgb(59, 59, 59);
+}
+
+.modal-overlay-contact {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.6);
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.modal-box-contact {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 400px;
+  position: relative;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  transform: scale(0.95);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  opacity: 0;
+}
+
+.modal-overlay-contact.show {
+  display: flex;
+  opacity: 1;
+}
+
+.modal-overlay-contact.show .modal-box-contact {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.modal-box-contact h2,
+.modal-box-contact p {
+  margin: 0;
+  padding: 0;
+  color: #333;
+  font-family: 'Raleway', sans-serif;
+}
+
+.modal-box-contact h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.modal-box-contact p {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #555;
+}
+
+#closeContactModal {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: transparent;
+  border: none;
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+
+#contactForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+#contactForm input,
+#contactForm textarea {
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-family: 'Roboto', sans-serif;
+  background-color: #f9f9f9;
+  transition: border-color 0.3s;
+}
+
+#contactForm input:focus,
+#contactForm textarea:focus {
+  border-color: #f0b028;
+  outline: none;
+  background-color: #fff;
+}
+
+.modal-btn-contact {
+  background-color: #008fe2;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.75rem;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s;
+}
+
+.modal-btn-contact:hover {
+  background-color: rgb(59, 59, 59);
+}
+
+.view-description-btn {
+  margin-top: 8px;
+  padding: 8px 12px;
+  background-color: #444;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.view-description-btn:hover {
+  background-color: #666;
+}
